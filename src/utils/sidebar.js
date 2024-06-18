@@ -8,7 +8,7 @@ import Course from '../assets/icons/course.svg?react';
 import HR from '../assets/icons/hr.svg?react';
 import Settings from '../assets/icons/setting.svg?react';
 // Components
-import { Generics } from '../view/Generics';
+import Generics from '../view/Generics';
 // import { AnalitikaView } from '../view/AnalitikaView';
 // import AllLidsView from '../view/Lids/All';
 // import { AnalitikaView } from "../views/Analitika";
