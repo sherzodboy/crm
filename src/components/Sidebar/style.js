@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import arrow from '../../assets/icons/rightArrow.svg?react';
 import logout from '../../assets/icons/exit.svg?react';
+import { NavLink } from 'react-router-dom';
 
 const Arrow = styled(arrow)`
   display-flex;
   margin-left: auto;
-  transform: ${({ active }) => active && 'rotate(90deg)'};
+  transform: ${({ active }) => active === 'true' && 'rotate(90deg)'};
   transition: all 0.1s;
 `;
 const Container = styled.div`
@@ -109,19 +110,27 @@ ProfileContainer.Email = styled.div`
 const Menu = styled.div`
   display: flex;
   flex-direction: column;
-  // padding: 0 24px;
 `;
-const MenuItem = styled.div`
+const MenuItem = styled(NavLink)`
   display: flex;
   align-items: center;
   padding-right: 24px;
+  color: ${({ active }) =>
+    active === 'true' ? 'var(--activeColor)' : 'var(--primaryColor)'};
+  background-color: ${({ active }) =>
+    active === 'true' ? '#f7f9fb' : 'inherit'};
+
   &:hover {
     cursor: pointer;
     background-color: #f7f9fb;
     color: var(--activeColor);
+
     & path {
       fill: var(--activeColor);
     }
+  }
+  & path {
+    fill: ${({ active }) => active === 'true' && 'var(--activeColor)'};
   }
 `;
 MenuItem.Title = styled.div`
@@ -143,7 +152,7 @@ const LogOutIcon = styled(logout)`
 `;
 const ChildWrapper = styled.div`
   margin-left: 35px;
-  height: ${({ active }) => (active ? 'auto' : '0px')};
+  height: ${({ active }) => (active === 'true' ? 'auto' : '0px')};
   overflow: hidden;
 `;
 
