@@ -17,11 +17,11 @@ const Container = styled.div`
   border: 1px solid var(--secondaryColor);
   border-radius: 8px;
   flex: 1;
-  overflow: hidden;
   border-radius: ${({ borderRadius }) => getValue(borderRadius)};
   width: ${({ width }) => getValue(width)};
   height: ${({ height }) => getValue(height)};
   max-width: ${({ width }) => getValue(width)};
+  overflow: hidden;
 `;
 const Input = styled.input`
   flex: 1;
