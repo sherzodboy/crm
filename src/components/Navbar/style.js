@@ -5,7 +5,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid coral;
   background-color: white;
   height: 60px;
   padding: 0 16px 0 24px;
@@ -43,7 +42,7 @@ const SearchIcon = styled(search)`
 const Section = styled.div`
   display: flex;
   align-items: center;
-  
+  gap: 1rem;
 `;
 const Timer = styled.div`
   color: ${({ status }) =>
@@ -51,6 +50,7 @@ const Timer = styled.div`
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  padding: 4px; 
+  padding: 4px;
 `;
+
 export { Container, InputWrapper, Input, SearchIcon, Section, Timer };

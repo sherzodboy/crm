@@ -38,7 +38,9 @@ const Time = () => {
       <Timer>
         {date.hour}:{date.minute}
       </Timer>
-      <Timer status="true">{date.status}</Timer>
+      <Timer style={{ marginLeft: '-15px' }} status="true">
+        {date.status}
+      </Timer>
     </Section>
   );
 };
