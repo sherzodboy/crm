@@ -29,11 +29,14 @@ const Side = styled.div`
 `;
 const Body = styled.div`
   flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
 `;
 const Wrapper = styled.div`
-  border: 2px solid blue;
   margin: 16px;
   background-color: white;
+  border-radius: 8px;
 `;
 const Logo = styled.div`
   position: sticky;

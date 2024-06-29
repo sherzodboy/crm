@@ -11,7 +11,7 @@ const Navbar = () => {
         height={40}
         fontWeight={500}
         fontSize={14}
-        width={600}
+        width={500}
         lineHeight={20}
         borderRadius={8}
         placeholder={'Search'}
