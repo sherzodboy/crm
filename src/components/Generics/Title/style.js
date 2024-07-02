@@ -5,7 +5,7 @@ const Container = styled.div`
   display: inherit;
   align-items: inherit;
   font-weight: ${({ type }) => (!type ? 600 : 400)};
-  font-size: 20px;
+  font-size: ${({ size }) => (size ? getValue(size) : '20p')};
   line-height: 28px;
   text-align: left;
 

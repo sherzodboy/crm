@@ -87,5 +87,26 @@ const SubCard = styled(Card)`
   border-radius: 8px;
   border: 2px solid #f0f0f0;
 `;
+const FooterWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  gap: 17px;
+`;
+FooterWrapper.Email = styled.div`
+  flex: 2;
+`;
+FooterWrapper.Moliya = styled.div`
+  flex: 1;
+`;
 
-export { Container, Wrapper, Card, Section, Plus, Counter, Arrow, SubCard };
+export {
+  Container,
+  Wrapper,
+  Card,
+  Section,
+  Plus,
+  Counter,
+  Arrow,
+  SubCard,
+  FooterWrapper,
+};

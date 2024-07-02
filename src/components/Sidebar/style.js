@@ -37,6 +37,7 @@ const Wrapper = styled.div`
   margin: 16px;
   background-color: white;
   border-radius: 8px;
+  // border: 2px solid red;
 `;
 const Logo = styled.div`
   position: sticky;

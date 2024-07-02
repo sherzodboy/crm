@@ -9,13 +9,17 @@ import {
   Counter,
   Arrow,
   SubCard,
+  FooterWrapper,
 } from './style';
 import { mediaData, privateData } from '../../utils/analitics';
+import Email from './Email';
+import Moliya from './Moliya';
 
 const Analitika = () => {
   return (
     <Container>
       <Title mb={16}> Analitika</Title>
+      {/* PrivateData */}
       <Wrapper gap={24}>
         {privateData.map((value) => {
           const { icon: Icon } = value;
@@ -43,6 +47,7 @@ const Analitika = () => {
       <Subtitle mt={24} mb={16}>
         Ijtimoiy tarmoqlar
       </Subtitle>
+      {/* MediaData */}
       <Wrapper>
         {mediaData.map((value) => {
           const { icon: Icon } = value;
@@ -66,6 +71,20 @@ const Analitika = () => {
           );
         })}
       </Wrapper>
+      <FooterWrapper>
+        <FooterWrapper.Email>
+          <Subtitle mt={24} mb={16} count={12}>
+            Email habarlari
+          </Subtitle>
+          <Email></Email>
+        </FooterWrapper.Email>
+        <FooterWrapper.Moliya>
+          <Subtitle mt={24} mb={16}>
+            Moliya
+          </Subtitle>
+          <Moliya></Moliya>
+        </FooterWrapper.Moliya>
+      </FooterWrapper>
     </Container>
   );
 };

@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import getValue from '../../../hooks/getStyleValue';
 
 const Container = styled.div`
-  display: inherit;
-  align-items: inherit;
+  display: flex;
+  align-items: center;
   font-weight: 500;
-  font-size: 16px;
   line-height: 24px;
-  color: #253e5f;
+  color: ${({ color }) => (color ? color : '#253e5f')};
+  font-size: ${({ size }) => (size ? getValue(size) : '16px')};
 
   margin-top: ${({ mt }) => getValue(mt)};
   margin-bottom: ${({ mb }) => getValue(mb)};
@@ -20,4 +20,19 @@ const Container = styled.div`
   padding-left: ${({ pl }) => getValue(pl)};
 `;
 
-export { Container };
+const Counter = styled.div`
+  width: 28px;
+  height: 28px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background-color: #1890ff;
+  color: white;
+  border-radius: 50%;
+  margin-left: 8px;
+`;
+
+export { Container, Counter };
