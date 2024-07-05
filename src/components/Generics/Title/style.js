@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import getValue from '../../../hooks/getStyleValue';
 
 const Container = styled.div`
-  display: inherit;
+  display: flex;
   align-items: inherit;
   font-weight: ${({ type }) => (!type ? 600 : 400)};
   font-size: ${({ size }) => (size ? getValue(size) : '20p')};
