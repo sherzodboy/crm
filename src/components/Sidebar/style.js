@@ -29,8 +29,8 @@ const Side = styled.div`
 `;
 const Body = styled.div`
   flex: 1;
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh; 
+  // overflow: hidden;
   overflow-y: scroll;
 `;
 const Wrapper = styled.div`
