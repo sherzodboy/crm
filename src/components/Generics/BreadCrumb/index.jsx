@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 const BreadCrumb = () => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <Container title={location.state?.parent}>

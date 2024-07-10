@@ -71,7 +71,7 @@ const Moliya = () => {
       </Title>
       <Fragment mb={8}>
         <Subtitle>
-          <Circle green></Circle> Talabalar
+          <Circle green="true"></Circle> Talabalar
         </Subtitle>
         <Subtitle>5 760 000</Subtitle>
       </Fragment>

@@ -17,6 +17,8 @@ const getColor = ({ title }) => {
       return '#FFF0F6';
     case 'Sozlamalar':
       return '#FFF2E8';
+    default:
+      return '#F0F5FF';
   }
 };
 
@@ -29,5 +31,7 @@ const Container = styled.div`
   background-color: ${getColor};
   margin-bottom: 32px;
 `;
-const Arrow = styled(arrow)``;
+const Arrow = styled(arrow)`
+  display: flex;
+`;
 export { Container, Arrow };
