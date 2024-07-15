@@ -4,7 +4,7 @@ import logout from '../../assets/icons/exit.svg?react';
 import { NavLink } from 'react-router-dom';
 
 const Arrow = styled(arrow)`
-  display-flex;
+  display: flex;
   margin-left: auto;
   transform: ${({ active }) => active === 'true' && 'rotate(90deg)'};
   transition: all 0.1s;
@@ -29,7 +29,7 @@ const Side = styled.div`
 `;
 const Body = styled.div`
   flex: 1;
-  height: 100vh; 
+  height: 100vh;
   // overflow: hidden;
   overflow-y: scroll;
 `;

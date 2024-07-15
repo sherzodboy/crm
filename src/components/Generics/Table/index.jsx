@@ -9,7 +9,6 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
-import GenericSelect from '../Select';
 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, numSelected, rowCount, headCells } = props;
@@ -25,7 +24,7 @@ function EnhancedTableHead(props) {
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputProps={{
-              'aria-label': 'select all desserts',
+              'aria-label': '  all desserts',
             }}
           />
         </TableCell>
@@ -76,12 +75,6 @@ const GenericTable = (props) => {
 
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
-  const data1 = [
-    { value: 'uzbek', title: 'Uzbek' },
-    { value: 'russian', title: 'Russian' },
-    { value: 'english', title: 'English' },
-  ];
-
   return (
     <Box sx={{ width: '100%' }}>
       <TableContainer
@@ -95,13 +88,14 @@ const GenericTable = (props) => {
       >
         <Table>
           <TableBody>
-            <TableRow sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <GenericSelect value="uzbek" data={data1} />
-              <GenericSelect value="english" data={data1} />
-              <GenericSelect data={data1} />
-              <GenericSelect data={data1} />
-              <GenericSelect data={data1} />
-              <GenericSelect data={data1} />
+            <TableRow
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                columnGap: '30px',
+              }}
+            >
+              {props?.children}
             </TableRow>
           </TableBody>
         </Table>
@@ -152,7 +146,7 @@ const GenericTable = (props) => {
                           fontFamily: 'Montserrat',
                         }}
                       >
-                        {row[val.id]}
+                        {val.render ? val.render : row[val.id]}
                       </TableCell>
                     ))}
                   </TableRow>
