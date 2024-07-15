@@ -1,12 +1,15 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react';
 import BreadCrumb from '../../Generics/BreadCrumb';
 import GenericTable from '../../Generics/Table';
 import { Action, Container } from './style';
 import GenericButton from '../../Generics/Button';
 import GenericSelect from '../../Generics/Select';
+import Modal from '../../Generics/Modal';
 
 const AllLids = () => {
   const [open, setOpen] = useState(false);
+  const [openModal, setModal] = useState(false);
 
   const onEdit = (e) => {
     e.stopPropagation();
@@ -80,6 +83,9 @@ const AllLids = () => {
 
   return (
     <Container>
+      <Modal open={openModal}>
+        <GenericButton type="add">Talaba qo'shish</GenericButton>
+      </Modal>
       <BreadCrumb>
         <GenericButton type="import" onClick={() => setOpen(!open)}>
           Import
@@ -87,8 +93,8 @@ const AllLids = () => {
         <GenericButton type="filter" onClick={() => setOpen(!open)}>
           Filter
         </GenericButton>
-        <GenericButton type="add" onClick={() => setOpen(!open)}>
-          {"Buyurtma qo'shish"}
+        <GenericButton type="add" onClick={() => setModal(!openModal)}>
+          Buyurtma qo'shish
         </GenericButton>
       </BreadCrumb>
       <GenericTable open={open} headCells={headCells} rows={rows}>

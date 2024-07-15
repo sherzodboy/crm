@@ -27,6 +27,7 @@ const Button = styled.button`
   line-height: 20px;
   font-weight: 500;
   gap: 8px;
+  white-space: nowrap;
 
   &:active {
     transform: scale(0.98);
