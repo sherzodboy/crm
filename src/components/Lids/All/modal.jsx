@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import Modal from '../../Generics/Modal/index';
 import Title from '../../Generics/Title';
@@ -7,13 +8,19 @@ import GenericSelect from '../../Generics/Select';
 import { ModalRow, TextArea } from './style';
 
 const AllLidsModal = (props) => {
+  const { data } = props;
+  const selectData = data && [
+    { value: 'Frontend', title: 'Frontend' },
+    { value: 'Backend', title: 'Backend' },
+  ];
+
   return (
     <Modal {...props}>
       <Title size={22} mb={20}>
         Talaba qo'shish
       </Title>
-      {/* full name */}
       <ModalRow>
+        {/* full name */}
         <Subtitle size={13} mb={3} color="#929FAF">
           To'liq ismingiz
         </Subtitle>
@@ -23,35 +30,36 @@ const AllLidsModal = (props) => {
           pl={15}
           color={'black'}
           placeholder={'Search'}
+          value={data?.name}
         />
       </ModalRow>
-      {/* Yo'nalish */}
       <ModalRow>
+        {/* Yo'nalish */}
         <Subtitle size={13} mb={3} color="#929FAF">
           Yo'nalishni tanlang
         </Subtitle>
-        <GenericSelect width={'100%'} />
+        <GenericSelect data={selectData} width={'100%'} value={data?.group} />
       </ModalRow>
-      {/* Daraja */}
       <ModalRow>
+        {/* Daraja */}
         <Subtitle size={13} mb={3} color="#929FAF">
           Darajangizni tanlang
         </Subtitle>
-        <GenericSelect width={'100%'} />
+        <GenericSelect data={selectData} width={'100%'} value={data?.level} />
       </ModalRow>
-      {/* Kun */}
       <ModalRow>
+        {/* Kun */}
         <Subtitle size={13} mb={3} color="#929FAF">
           Kunni tanlang
         </Subtitle>
-        <GenericSelect width={'100%'} />
+        <GenericSelect data={selectData} width={'100%'} value={data?.days} />
       </ModalRow>
-      {/* Kelish sanasi */}
       <ModalRow>
+        {/* Kelish sanasi */}
         <Subtitle size={13} mb={3} color="#929FAF">
           Boshlash sanasini tanlang
         </Subtitle>
-        <GenericSelect width={'100%'} />
+        <GenericSelect data={selectData} width={'100%'} value={data?.date} />
       </ModalRow>
       {/* Izoh */}
       <ModalRow>

@@ -146,7 +146,7 @@ const GenericTable = (props) => {
                           fontFamily: 'Montserrat',
                         }}
                       >
-                        {val.render ? val.render : row[val.id]}
+                        {val?.render ? val?.render(row) : row[val.id]}
                       </TableCell>
                     ))}
                   </TableRow>
