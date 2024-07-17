@@ -13,16 +13,21 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   position: absolute;
-  top: 11%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   max-width: 900px;
-  min-width: 300px;
+  min-width: 500px;
   width: fit-content;
   height: auto;
   background-color: white;
   border-radius: 8px;
   padding: 32px 48px;
 `;
+const Footer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+`;
 
-export { Container, Wrapper };
+export { Container, Wrapper, Footer };

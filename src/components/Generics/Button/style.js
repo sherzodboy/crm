@@ -62,8 +62,8 @@ Button.Primary = styled(Button)`
 `;
 
 Button.Delete = styled(Button)`
-  border: none;
   border-color: #ffa39e;
+  /* border: none; */
   color: #f5222d;
   transition: 0.2s all linear;
   &:hover {

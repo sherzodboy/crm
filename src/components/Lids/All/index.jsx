@@ -5,7 +5,7 @@ import GenericTable from '../../Generics/Table';
 import { Action, Container } from './style';
 import GenericButton from '../../Generics/Button';
 import GenericSelect from '../../Generics/Select';
-import Modal from '../../Generics/Modal';
+import AllLidsModal from './modal';
 
 const AllLids = () => {
   const [open, setOpen] = useState(false);
@@ -81,19 +81,21 @@ const AllLids = () => {
     { value: 'english', title: 'English' },
   ];
 
+  const onToggleModal = () => {
+    setModal(!openModal);
+  };
+
+  const onSave = () => {};
+
   return (
     <Container>
-      <Modal open={openModal}>
-        <GenericButton type="add">Talaba qo'shish</GenericButton>
-      </Modal>
+      <AllLidsModal open={openModal} onSave={onSave} onClose={onToggleModal} />
       <BreadCrumb>
-        <GenericButton type="import" onClick={() => setOpen(!open)}>
-          Import
-        </GenericButton>
+        <GenericButton type="import">Import</GenericButton>
         <GenericButton type="filter" onClick={() => setOpen(!open)}>
           Filter
         </GenericButton>
-        <GenericButton type="add" onClick={() => setModal(!openModal)}>
+        <GenericButton type="add" onClick={onToggleModal}>
           Buyurtma qo'shish
         </GenericButton>
       </BreadCrumb>
