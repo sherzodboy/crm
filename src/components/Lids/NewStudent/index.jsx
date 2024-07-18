@@ -130,6 +130,7 @@ const NewStudent = () => {
         onClose={onToggleModal}
       />
       <BreadCrumb>
+        {/* import */}
         <GenericButton type="import" onClick={() => setOpen(!open)}>
           Import
         </GenericButton>
