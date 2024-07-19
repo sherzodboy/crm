@@ -13,6 +13,9 @@ import { AnalitikaView } from '../view/AnalitikaView';
 import { AllLidsView } from '../view/Lids/All';
 import { FirstClassView } from '../view/Lids/First';
 import { NewStudentView } from '../view/Lids/New';
+import { ArchiveStudentsView } from '../view/Students/Archive';
+import { ActiveStudentsView } from '../view/Students/Active';
+import { AllStudentsView } from '../view/Students/All';
 
 const sidebar = [
   {
@@ -87,25 +90,25 @@ const sidebar = [
         parentID: 4,
         path: '/talabalar/all-talabalar',
         isPrivate: true,
-        element: Generics,
+        element: AllStudentsView,
         role: ['admin', 'manager'],
       },
-      {
-        id: `4-2`,
-        title: 'Davomat',
-        path: '/talabalar/davomat',
-        parentID: 4,
-        isPrivate: true,
-        element: Generics,
-        role: ['admin', 'manager'],
-      },
+      // {
+      //   id: `4-2`,
+      //   title: 'Davomat',
+      //   path: '/talabalar/davomat',
+      //   parentID: 4,
+      //   isPrivate: true,
+      //   element: Generics,
+      //   role: ['admin', 'manager'],
+      // },
       {
         id: `4-3`,
         title: 'Aktive',
         path: '/talabalar/active',
         parentID: 4,
         isPrivate: true,
-        element: Generics,
+        element: ActiveStudentsView,
         role: ['admin', 'manager'],
       },
       {
@@ -114,18 +117,18 @@ const sidebar = [
         path: '/talabalar/archive',
         isPrivate: true,
         parentID: 4,
-        element: Generics,
+        element: ArchiveStudentsView,
         role: ['admin', 'manager'],
       },
-      {
-        id: `4-5`,
-        title: 'Ota-onalar',
-        path: '/talabalar/parents',
-        parentID: 4,
-        isPrivate: true,
-        element: Generics,
-        role: ['admin', 'manager'],
-      },
+      // {
+      //   id: `4-5`,
+      //   title: 'Ota-onalar',
+      //   path: '/talabalar/parents',
+      //   parentID: 4,
+      //   isPrivate: true,
+      //   element: Generics,
+      //   role: ['admin', 'manager'],
+      // },
     ],
   },
   {
