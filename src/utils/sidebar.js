@@ -16,6 +16,8 @@ import { NewStudentView } from '../view/Lids/New';
 import { ArchiveStudentsView } from '../view/Students/Archive';
 import { ActiveStudentsView } from '../view/Students/Active';
 import { AllStudentsView } from '../view/Students/All';
+import { RoomsView } from '../view/Guruhlar/Rooms';
+import { GuruhlarView } from '../view/Guruhlar/Guruhlar';
 
 const sidebar = [
   {
@@ -146,25 +148,25 @@ const sidebar = [
         title: 'Guruhlar',
         path: '/guruhlar/guruhlar',
         isPrivate: true,
-        element: Generics,
+        element: GuruhlarView,
         role: ['admin', 'manager'],
       },
-      {
-        id: `5-2`,
-        title: 'Dars Jadvali',
-        parentID: 5,
-        path: '/guruhlar/jadval',
-        isPrivate: true,
-        element: Generics,
-        role: ['admin', 'manager'],
-      },
+      // {
+      //   id: `5-2`,
+      //   title: 'Dars Jadvali',
+      //   parentID: 5,
+      //   path: '/guruhlar/jadval',
+      //   isPrivate: true,
+      //   element: ScheduleView,
+      //   role: ['admin', 'manager'],
+      // },
       {
         id: `5-3`,
         title: 'Xonalar',
         parentID: 5,
         path: '/guruhlar/xonalar',
         isPrivate: true,
-        element: Generics,
+        element: RoomsView,
         role: ['admin', 'manager'],
       },
     ],
