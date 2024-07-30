@@ -18,6 +18,7 @@ const Container = styled.div``;
 const Action = styled.div`
   display: flex;
   z-index: 9999;
+  justify-content: flex-end;
 `;
 
 Action.Edit = styled(edit)`
@@ -64,5 +65,45 @@ const TextArea = styled.textarea`
 const ModalRow = styled.div`
   margin-bottom: 18px;
 `;
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border: 2px solid #f0f0f0;
+  background-color: white;
+  border-radius: 8px;
+  transform: translate(-50%, 15%);
+  top: ${({ y }) => `${y}px`};
+  left: ${({ x }) => `${x}px`};
+`;
+const Arrow = styled.div`
+  border: 1px solid #f0f0f0;
+  width: 32px;
+  height: 32px;
+  align-self: center;
+  transform: rotate(45deg);
+  margin-top: -16px;
+  background-color: white;
+  border-color: #f0f0f0 transparent transparent #f0f0f0;
+`;
+const StatusWraper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
+  &:hover {
+    background-color: #f8fafc;
+  }
+`;
 
-export { Container, Action, ModalRow, TextArea };
+export {
+  Container,
+  Action,
+  ModalRow,
+  TextArea,
+  ModalContainer,
+  Arrow,
+  StatusWraper,
+};
