@@ -118,10 +118,11 @@ const Rooms = () => {
         onClose={onToggleModal}
       />
       <BreadCrumb>
-        {/* <GenericButton type="filter" onClick={() => setOpen(!open)}>
-          Filter
-        </GenericButton> */}
-        <GenericButton type="add" onClick={onToggleModal}>
+        <GenericButton
+          style={{ backgroundColor: '#A0D911' }}
+          type="add"
+          onClick={onToggleModal}
+        >
           Xona qo'shish
         </GenericButton>
       </BreadCrumb>

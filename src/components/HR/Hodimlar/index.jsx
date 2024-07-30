@@ -70,12 +70,6 @@ const Hodimlar = () => {
     },
   ];
 
-  // const data1 = [
-  //   { value: 'uzbek', title: 'Uzbek' },
-  //   { value: 'russian', title: 'Russian' },
-  //   { value: 'english', title: 'English' },
-  // ];
-
   const onToggleModal = () => {
     setModal(!openModal);
     setModalProps(null);
@@ -92,10 +86,11 @@ const Hodimlar = () => {
         onClose={onToggleModal}
       />
       <BreadCrumb>
-        {/* <GenericButton type="filter" onClick={() => setOpen(!open)}>
-          Filter
-        </GenericButton> */}
-        <GenericButton type="add" onClick={onToggleModal}>
+        <GenericButton
+          style={{ backgroundColor: '#EB2F96' }}
+          type="add"
+          onClick={onToggleModal}
+        >
           Hodim qo'shish
         </GenericButton>
       </BreadCrumb>
@@ -104,14 +99,7 @@ const Hodimlar = () => {
         headCells={headCells}
         rows={rows}
         checkbox={false}
-      >
-        {/* <GenericSelect data={data1} />
-        <GenericSelect data={data1} />
-        <GenericSelect data={data1} />
-        <GenericSelect data={data1} />
-        <GenericSelect data={data1} />
-        <GenericSelect data={data1} /> */}
-      </GenericTable>
+      ></GenericTable>
     </Container>
   );
 };

@@ -183,7 +183,11 @@ const ArchiveStudents = () => {
         <GenericButton type="import" onClick={() => setOpen(!open)}>
           Import
         </GenericButton>
-        <GenericButton type="add" onClick={onToggleModal}>
+        <GenericButton
+          style={{ backgroundColor: '#722ED1' }}
+          type="add"
+          onClick={onToggleModal}
+        >
           Buyurtma qo'shish
         </GenericButton>
       </BreadCrumb>

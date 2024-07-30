@@ -82,7 +82,7 @@ Devider.Title = styled.div`
 
 const Section = styled.div`
   display: flex;
-  padding: 12px 0;
   margin-top: 2px;
+  align-items: center;
 `;
 export { Container, Action, ModalRow, TextArea, Devider, Section };

@@ -6,6 +6,7 @@ import GenericInput from '../../Generics/Input/index';
 import Subtitle from '../../Generics/Subtitle';
 import GenericSelect from '../../Generics/Select';
 import { Devider, ModalRow, Section } from './style';
+import { Checkbox } from '@mui/material';
 
 const AllLidsModal = (props) => {
   const { data } = props;
@@ -58,10 +59,18 @@ const AllLidsModal = (props) => {
       <Devider>
         <Devider.Filiallar>
           <Devider.Title>Filiallar</Devider.Title>
-          <Section>- A.Navoiy st.</Section>
-          <Section>- Ibn Sino st.</Section>
-          <Section>- Amir Temur st.</Section>
-          <Section>- Beruniy st.</Section>
+          <Section>
+            <Checkbox /> A.Navoiy st.
+          </Section>
+          <Section>
+            <Checkbox /> Ibn Sino st.
+          </Section>
+          <Section>
+            <Checkbox /> Amir Temur st.
+          </Section>
+          <Section>
+            <Checkbox /> Beruniy st.
+          </Section>
         </Devider.Filiallar>
         <Devider.Role>
           <Devider.Title>Role</Devider.Title>

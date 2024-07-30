@@ -100,7 +100,11 @@ const Guruhlar = () => {
         onClose={onToggleModal}
       />
       <BreadCrumb>
-        <GenericButton type="add" onClick={() => onToggleModal(!open)}>
+        <GenericButton
+          style={{ backgroundColor: '#A0D911' }}
+          type="add"
+          onClick={() => onToggleModal(!open)}
+        >
           Guruh Qo'shish
         </GenericButton>
       </BreadCrumb>

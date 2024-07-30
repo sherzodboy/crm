@@ -188,7 +188,11 @@ const AllStudents = () => {
         <GenericButton type="filter" onClick={() => setOpen(!open)}>
           Filter
         </GenericButton>
-        <GenericButton type="add" onClick={onToggleModal}>
+        <GenericButton
+          style={{ backgroundColor: '#722ED1' }}
+          type="add"
+          onClick={onToggleModal}
+        >
           Buyurtma qo'shish
         </GenericButton>
       </BreadCrumb>

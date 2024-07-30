@@ -54,5 +54,34 @@ const TextArea = styled.textarea`
 const ModalRow = styled.div`
   margin-bottom: 18px;
 `;
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+`;
 
-export { Container, Action, ModalRow, TextArea };
+Wrapper.Section = styled.div`
+  display: flex;
+`;
+
+Wrapper.Left = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+Wrapper.Right = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+Wrapper.Title = styled.div`
+  //styleName: Body/Medium/16 px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #253e5f80;
+  margin: 16px 0;
+`;
+
+export { Container, Action, ModalRow, TextArea, Wrapper };

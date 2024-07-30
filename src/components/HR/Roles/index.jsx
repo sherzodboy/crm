@@ -81,11 +81,12 @@ const Roles = () => {
         onClose={onToggleModal}
       />
       <BreadCrumb>
-        {/* <GenericButton type="filter" onClick={() => setOpen(!open)}>
-          Filter
-        </GenericButton> */}
-        <GenericButton type="add" onClick={onToggleModal}>
-          Xona qo'shish
+        <GenericButton
+          style={{ backgroundColor: '#EB2F96' }}
+          type="add"
+          onClick={onToggleModal}
+        >
+          Ro'l qo'shish
         </GenericButton>
       </BreadCrumb>
       <GenericTable
