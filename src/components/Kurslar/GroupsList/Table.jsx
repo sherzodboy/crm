@@ -10,6 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Button from '../../Generics/Button';
 import { Delete, Edit, Status, TimelineWrapper, Title } from './tableStyle';
 
 const styleCell = {
@@ -23,6 +24,9 @@ const styleCell = {
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
+  const onAddKurs = (e) => {
+    e.stopPropagation();
+  };
 
   return (
     <React.Fragment>
@@ -45,7 +49,17 @@ function Row(props) {
         >
           {row.title}
         </TableCell>
-        <TableCell sx={{ border: 0 }} align="right">
+        <TableCell
+          sx={{
+            border: 0,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+          }}
+          align="right"
+        >
+          <Button onClick={onAddKurs} type="add"></Button>
           <Edit />
           <Delete />
         </TableCell>

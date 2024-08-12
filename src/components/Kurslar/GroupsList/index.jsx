@@ -3,9 +3,9 @@ import { useState } from 'react';
 import BreadCrumb from '../../Generics/BreadCrumb';
 import { Action, Container } from './style';
 import GenericButton from '../../Generics/Button';
-import AllLidsModal from './modal';
 import { rows } from '../../../mock/groups';
 import CollapsibleTable from './Table';
+import GroupModal from './GroupModalKurs';
 
 const GroupsList = () => {
   // const [open, setOpen] = useState(false);
@@ -44,7 +44,7 @@ const GroupsList = () => {
 
   return (
     <Container>
-      <AllLidsModal
+      <GroupModal
         data={modalProps}
         open={openModal}
         onSave={onSave}
