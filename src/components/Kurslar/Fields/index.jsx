@@ -4,7 +4,6 @@ import BreadCrumb from '../../Generics/BreadCrumb';
 import GenericTable from '../../Generics/Table';
 import { Action, Container } from './style';
 import GenericButton from '../../Generics/Button';
-// import GenericSelect from '../../Generics/Select';
 import AllLidsModal from './modal';
 
 const Fields = () => {
@@ -117,7 +116,7 @@ const Fields = () => {
           type="add"
           onClick={onToggleModal}
         >
-          Xona qo'shish
+          Yo'nalish qo'shish
         </GenericButton>
       </BreadCrumb>
       <GenericTable

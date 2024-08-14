@@ -9,7 +9,7 @@ const Container = styled.div`
   inset: 0;
 
   background-color: #253e5f80;
-  z-index: 22222;
+  z-index: 999;
 `;
 const Wrapper = styled.div`
   position: absolute;

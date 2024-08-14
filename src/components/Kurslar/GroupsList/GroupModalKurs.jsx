@@ -9,10 +9,6 @@ import { Checkbox } from '@mui/material';
 
 const GroupModal = (props) => {
   const { data } = props;
-  // const selectData = data && [
-  //   { value: 'Frontend', title: 'Frontend' },
-  //   { value: 'Backend', title: 'Backend' },
-  // ];
 
   return (
     <Modal {...props}>
