@@ -22,6 +22,7 @@ import { HodimlarView } from '../view/HR/Hodimlar';
 import { RolesView } from '../view/HR/Roles';
 import { GroupsListView } from '../view/Kurslar/List';
 import { FieldsView } from '../view/Kurslar/Field';
+import { UmumiyView } from '../view/Sozlamalar/Umumiy';
 
 const sidebar = [
   {
@@ -248,7 +249,7 @@ const sidebar = [
         parentID: 8,
         path: '/sozlamalar/umumiy',
         isPrivate: true,
-        element: Generics,
+        element: UmumiyView,
         role: ['admin', 'manager'],
       },
       {

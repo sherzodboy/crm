@@ -3,12 +3,28 @@ import { Container } from './style';
 import sidebar from '../utils/sidebar';
 import Sidebar from '../components/Sidebar';
 import Checkin from '../components/Guruhlar/Guruhlar/Checkin';
+import UmumiySidebar from '../components/Sozlamalar/Umumiy/Sidebar';
+import { umumiy } from '../utils/sozlamalar';
 
 const Root = () => {
   return (
     <Container>
       <Routes>
+        {/* MAIN */}
         <Route element={<Sidebar />}>
+          {/* SozlamalarR */}
+          <Route element={<UmumiySidebar />}>
+            {umumiy.map((item) => {
+              const { element: Element } = item;
+              return (
+                <Route
+                  key={item.id}
+                  path={`sozlamalar/umumiy/${item.path}`}
+                  element={<Element />}
+                />
+              );
+            })}
+          </Route>
           <Route path={'/guruhlar/guruhlar/checkin'} element={<Checkin />} />;
           {sidebar.map((parent) => {
             const ElementParent = parent.element;
