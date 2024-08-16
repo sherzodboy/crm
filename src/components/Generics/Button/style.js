@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import filter from '../../../assets/icons/filter.svg?react';
 import imp from '../../../assets/icons/import.svg?react';
 import add from '../../../assets/icons/add.svg?react';
+import getValue from '../../../hooks/getStyleValue';
 
 export const Icons = styled.div``;
 
@@ -36,6 +37,13 @@ const Button = styled.button`
 
   -webkit-user-select: none; /* Safari */
   user-select: none; /* Standard syntax */
+
+  max-width: ${({ width }) => getValue(width)};
+  margin-top: ${({ mt }) => getValue(mt)};
+  margin-bottom: ${({ mb }) => getValue(mb)};
+  margin-right: ${({ mr }) => getValue(mr)};
+  margin-left: ${({ ml }) => getValue(ml)};
+  margin-left: ${({ align }) => align};
 `;
 
 Button.Import = styled(Button)`

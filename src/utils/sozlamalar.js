@@ -6,20 +6,23 @@ import sorov from '../assets/icons/sozlamalar/sorov.svg?react';
 
 // Components
 import Generics from '../view/Generics';
+import CheckView from '../view/Sozlamalar/Check';
+import FiliallarView from '../view/Sozlamalar/Filiallar';
+import XabarnomaView from '../view/Sozlamalar/Xabarnoma';
 
 export const umumiy = [
-  { id: 1, icon: Check, element: Generics, path: 'check', title: 'Check' },
+  { id: 1, icon: Check, element: CheckView, path: 'check', title: 'Check' },
   {
     id: 2,
     icon: filial,
-    element: Generics,
+    element: FiliallarView,
     path: 'filiallar',
     title: 'Filiallar',
   },
   {
     id: 3,
     icon: xabarnoma,
-    element: Generics,
+    element: XabarnomaView,
     path: 'xabarnomalar',
     title: 'Xabarnomalar',
   },

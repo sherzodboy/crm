@@ -20,10 +20,11 @@ export const Sidebar = styled.div`
   }
 `;
 export const Body = styled.div`
-  display: flex;
-  flex-direction: column;
   flex: 1;
-  border: 1px solid blue;
+  height: 100vh;
+  min-width: calc(1440px - 550px);
+  /* border-left: 2px solid blue; */
+  overflow-y: scroll;
 `;
 
 export const Link = styled(NavLink)`
