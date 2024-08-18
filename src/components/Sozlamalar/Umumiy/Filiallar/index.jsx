@@ -1,11 +1,23 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import { Container } from './style';
 import { useState } from 'react';
 import GenericTable from '../../../Generics/Table/index';
+import BreadCrumb from '../../BreadCrumb';
+import GenericButton from '../../../Generics/Button/index';
+import FiliallarModal from './modal';
 
 const Filiallar = () => {
-  const [open] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const onSave = () => {
+    setOpen(false);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
 
   const rows = [
     {
@@ -39,9 +51,18 @@ const Filiallar = () => {
 
   return (
     <Container>
+      <FiliallarModal open={open} onSave={onSave} onClose={onClose} />
+      <BreadCrumb>
+        <GenericButton
+          onClick={() => setOpen(true)}
+          style={{ backgroundColor: '#FA8C16' }}
+          type="add"
+        >
+          Filial qo'shish
+        </GenericButton>
+      </BreadCrumb>
       <GenericTable
         checkbox={false}
-        open={open}
         headCells={cells}
         rows={rows}
       ></GenericTable>

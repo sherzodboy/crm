@@ -66,6 +66,7 @@ const Root = () => {
         })}
 
         <Route path="/login" element={<div>login</div>} />
+
         <Route path="/" element={<Navigate to={'/analitika'} />} />
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>

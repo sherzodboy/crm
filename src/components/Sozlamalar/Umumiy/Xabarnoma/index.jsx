@@ -1,9 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import { Container, Status } from './style';
 import { useState } from 'react';
 import GenericTable from '../../../Generics/Table/index';
 import { Switch } from '@mui/material';
+import BreadCrumb from '../../BreadCrumb';
 
 const Xabarnoma = () => {
   const [open] = useState(false);
@@ -49,6 +51,7 @@ const Xabarnoma = () => {
 
   return (
     <Container>
+      <BreadCrumb />
       <GenericTable
         checkbox={false}
         open={open}

@@ -22,9 +22,9 @@ export const Sidebar = styled.div`
 export const Body = styled.div`
   flex: 1;
   height: 100vh;
-  min-width: calc(1440px - 550px);
+  /* min-width: calc(1440px - 550px); */
   /* border-left: 2px solid blue; */
-  overflow-y: scroll;
+  overflow: scroll;
 `;
 
 export const Link = styled(NavLink)`

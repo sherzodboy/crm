@@ -1,11 +1,15 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import { Container } from './style';
 import { useState } from 'react';
 import GenericTable from '../../../Generics/Table/index';
+import CallModal from './modal';
+import BreadCrumb from '../../BreadCrumb';
+import GenericButton from '../../../Generics/Button';
 
 const CallConfig = () => {
-  const [open] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const rows = [
     {
@@ -48,11 +52,27 @@ const CallConfig = () => {
     },
   ];
 
+  const onSave = () => {
+    setOpen(false);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Container>
+      <CallModal open={open} onSave={onSave} onClose={onClose} />
+      <BreadCrumb>
+        <GenericButton
+          style={{ backgroundColor: '#FA8C16' }}
+          onClick={() => setOpen(true)}
+          type="add"
+        >
+          Rang qo'shish
+        </GenericButton>
+      </BreadCrumb>
       <GenericTable
         checkbox={false}
-        open={open}
         headCells={cells}
         rows={rows}
       ></GenericTable>
