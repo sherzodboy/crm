@@ -5,12 +5,15 @@ import status from '../assets/icons/sozlamalar/call.svg?react';
 import sorov from '../assets/icons/sozlamalar/sorov.svg?react';
 
 // Components
-// import Generics from '../view/Generics';
+// Umumiy
 import CheckView from '../view/Sozlamalar/Check';
 import FiliallarView from '../view/Sozlamalar/Filiallar';
 import XabarnomaView from '../view/Sozlamalar/Xabarnoma';
 import SorovnomalarView from '../view/Sozlamalar/Sorovnomalar';
 import CallConfigView from '../view/Sozlamalar/CallConfig';
+// Manager
+import TolovlarView from '../view/Sozlamalar/Tolovlar';
+import DarajalarView from '../view/Sozlamalar/Darajalar';
 
 export const umumiy = [
   { id: 1, icon: Check, element: CheckView, path: 'check', title: 'Check' },
@@ -41,5 +44,22 @@ export const umumiy = [
     element: CallConfigView,
     path: 'status',
     title: 'Status ',
+  },
+];
+
+export const manager = [
+  {
+    id: 1,
+    icon: Check,
+    element: TolovlarView,
+    path: 'tolovlar',
+    title: "To'lovlar",
+  },
+  {
+    id: 2,
+    icon: filial,
+    element: DarajalarView,
+    path: 'darajalar',
+    title: 'Darajalar',
   },
 ];
