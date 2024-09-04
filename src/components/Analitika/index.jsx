@@ -1,5 +1,9 @@
+import { useContext } from 'react';
 import Title from '../Generics/Title';
 import Subtitle from '../Generics/Subtitle';
+import { mediaData, privateData } from '../../utils/analitics';
+import Email from './Email';
+import Moliya from './Moliya';
 import {
   Container,
   Wrapper,
@@ -11,11 +15,12 @@ import {
   SubCard,
   FooterWrapper,
 } from './style';
-import { mediaData, privateData } from '../../utils/analitics';
-import Email from './Email';
-import Moliya from './Moliya';
+import { MentorContext } from '../../context/mentor';
 
 const Analitika = () => {
+  const [state] = useContext(MentorContext);
+  console.log(state, 'state');
+
   return (
     <Container>
       <Title mb={16}> Analitika</Title>
