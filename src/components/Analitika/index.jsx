@@ -19,7 +19,12 @@ import { MentorContext } from '../../context/mentor';
 
 const Analitika = () => {
   const [state] = useContext(MentorContext);
-  console.log(state, 'state');
+
+  const url = import.meta.env.VITE_BASE_URL;
+
+  fetch(`${url}/tabs/media`)
+    .then((res) => res.json())
+    .then((res) => console.log(res, 'res'));
 
   return (
     <Container>
