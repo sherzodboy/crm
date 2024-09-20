@@ -13,51 +13,31 @@ import linkedinIcon from '../assets/icons/linkedinIcon.svg?react';
 
 export const privateData = [
   {
-    id: 1,
+    id: 'students',
     title: 'Talabalar',
     icon: talabalarIcon,
     img: talabalarImg,
-    count: 285,
+    count: 'students',
   },
   {
-    id: 2,
+    id: 'mentors',
     title: 'Mentorlar',
     icon: mentorIcon,
     img: mentorImg,
-    count: 36,
+    count: 'mentors',
   },
   {
-    id: 3,
+    id: 'filials',
     title: 'Filiallar',
     icon: filialIcon,
     img: filialImg,
-    count: 3,
+    count: 'filials',
   },
 ];
 
-export const mediaData = [
-  {
-    id: 1,
-    title: 'Instagram',
-    icon: instagramIcon,
-    count: 16,
-  },
-  {
-    id: 2,
-    title: 'Telegram',
-    icon: telegramIcon,
-    count: 28,
-  },
-  {
-    id: 3,
-    title: 'Youtube',
-    icon: youtubeIcon,
-    count: 31,
-  },
-  {
-    id: 4,
-    title: 'Linkedin',
-    icon: linkedinIcon,
-    count: 2,
-  },
-];
+export const mediaIcons = {
+  1: instagramIcon,
+  2: telegramIcon,
+  3: youtubeIcon,
+  4: linkedinIcon,
+};

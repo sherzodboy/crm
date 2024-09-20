@@ -75,7 +75,7 @@ const Plus = styled.div`
   }
 `;
 const Counter = styled(Title)`
-  font-size: 40px;
+  font-size: 28px;
 `;
 const Arrow = styled(arrowUp)`
   width: 24px;

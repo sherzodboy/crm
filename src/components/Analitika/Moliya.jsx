@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import useDate, { weeks } from '../../hooks/date';
 import Title from '../Generics/Title';
 import Subtitle from '../Generics/Subtitle';
@@ -9,19 +10,27 @@ import {
   Circle,
   Arrow,
 } from './moliyaStyle';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { MoliyaContext } from '../../context/moliya/index';
 
 const Moliya = () => {
   const date = useDate();
   const [active, setActive] = useState(new Date().getDate());
   const [weekCount, changeWeek] = useState(0);
+  const [today, setToday] = useState({});
+  const [state, dispatch] = useContext(MoliyaContext);
+
+  const url = import.meta.env.VITE_BASE_URL;
 
   const onClickDate = (value) => {
-    if (date.week(weekCount)[0].getDate() === value.getDate())
-      changeWeek(weekCount - 1);
-    else if (date.week(weekCount)[6].getDate() === value.getDate())
-      changeWeek(weekCount + 1);
-    setActive(value.getDate());
+    // if (date.week(weekCount)[0].getDate() === value.getDate())
+    //   changeWeek(weekCount - 1);
+    // else if (date.week(weekCount)[6].getDate() === value.getDate())
+    //   changeWeek(weekCount + 1);
+    // setActive(value.getDate());
+    let [tdy] = state.filter((val) => val.today == value);
+    setToday(tdy);
+    setActive(value);
   };
 
   const onClickForward = () => {
@@ -31,6 +40,18 @@ const Moliya = () => {
   const onClickBackward = () => {
     changeWeek(weekCount - 6);
   };
+
+  useEffect(() => {
+    // moliya
+    fetch(`${url}/tabs/moliya`)
+      .then((res) => res.json())
+      .then((res) => {
+        let date = new Date().getDate();
+        let [tdy] = res.filter((val) => val.today == date);
+        setToday(tdy);
+        dispatch({ type: 'get', payload: res });
+      });
+  }, []);
 
   return (
     <Wrapper>
@@ -42,19 +63,20 @@ const Moliya = () => {
         <ArrowIcon onClick={onClickForward} />
       </Fragment>
       <Fragment mt={16} mb={16}>
-        {date.week(weekCount).map((value) => {
-          const ac = active === value.getDate();
+        {state.map((value) => {
+          let date = new Date(value.day);
+          const ac = value.today == active;
           return (
             <DateCard
               active={ac}
-              key={value}
-              onClick={() => onClickDate(value)}
+              key={value.id}
+              onClick={() => onClickDate(value.today)}
             >
               <Subtitle color={ac ? 'white' : '#929FAF'} size={14}>
-                {weeks[value.getDay()]?.short}
+                {weeks[date.getDay()]?.short}
               </Subtitle>
               <Subtitle color={ac ? 'white' : '#253E5F'} size={14}>
-                {value.getDate()}
+                {value.today}
               </Subtitle>
             </DateCard>
           );
@@ -64,7 +86,7 @@ const Moliya = () => {
         {date.date}-{date.month.full}, {date.year}
       </Subtitle>
       <Title mt={6} mb={22} size={32}>
-        8 520 000
+        {today.students}
         <Subtitle ml={16} size={24} color={'#52C41A'}>
           <Arrow /> +22%
         </Subtitle>
@@ -73,13 +95,13 @@ const Moliya = () => {
         <Subtitle>
           <Circle green="true"></Circle> Talabalar
         </Subtitle>
-        <Subtitle>5 760 000</Subtitle>
+        <Subtitle>{today.students}</Subtitle>
       </Fragment>
       <Fragment>
         <Subtitle>
           <Circle></Circle> Darsliklar sotuvi
         </Subtitle>
-        <Subtitle>2 180 000</Subtitle>
+        <Subtitle>{today.video}</Subtitle>
       </Fragment>
     </Wrapper>
   );
