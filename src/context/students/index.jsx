@@ -4,7 +4,7 @@ import { initialState, reducer } from './reducer';
 
 export const StudentsContext = createContext();
 
-export const StudentsProvider = ({ children }) => {
+const StudentsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <StudentsContext.Provider value={[state, dispatch]}>

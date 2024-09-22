@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
-import { useState, useEffect, useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import BreadCrumb from '../../Generics/BreadCrumb';
 import GenericTable from '../../Generics/Table';
 import { Action, Container } from './style';
@@ -15,12 +15,15 @@ const AllLids = () => {
   const [openModal, setModal] = useState(false);
   const [modalProps, setModalProps] = useState({});
   const [state, dispatch] = useContext(StudentsContext);
+  const [spinner, setSpinner] = useState(false);
 
   const request = useFetch();
 
   const getStudent = async () => {
+    setSpinner(true);
     let res = await request('/tabs/students');
     dispatch({ type: 'get', payload: res });
+    setSpinner(false);
   };
 
   // fetch
@@ -33,11 +36,13 @@ const AllLids = () => {
     setModal(!openModal);
     setModalProps(res);
   };
-  
+
   const onMove = (e, value) => {
+    setSpinner(true);
     e.stopPropagation();
     request(`/tabs/students/id/*${value?.id}*`, { method: 'DELETE' }).then(
-      () => {
+      (rs) => {
+        console.log(rs, 'rs');
         getStudent();
       }
     );
@@ -90,7 +95,12 @@ const AllLids = () => {
           Buyurtma qo'shish
         </GenericButton>
       </BreadCrumb>
-      <GenericTable open={open} headCells={headCells} rows={state}>
+      <GenericTable
+        open={open}
+        headCells={headCells}
+        rows={state}
+        spinner={spinner}
+      >
         <GenericSelect data={data1} />
         <GenericSelect data={data1} />
         <GenericSelect data={data1} />

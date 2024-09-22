@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import edit from '../../../assets/icons/edit.svg?react';
 import deleteI from '../../../assets/icons/delete.svg?react';
 

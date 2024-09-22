@@ -3,7 +3,7 @@ import AnalyticsProvider from './analytics';
 import EmailsProvider from './emails';
 import MediaProvider from './media';
 import MoliyaProvider from './moliya';
-import StudentsProvider from './students/index';
+import StudentsProvider from './students';
 
 const provider = [
   EmailsProvider,
