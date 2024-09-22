@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import edit from '../../../assets/icons/edit.svg?react';
 import deleteI from '../../../assets/icons/delete.svg?react';
-import move from '../../../assets/icons/action.svg?react';
 
 const Container = styled.div``;
 const Action = styled.div`
@@ -20,17 +19,7 @@ Action.Edit = styled(edit)`
     }
   }
 `;
-Action.Move = styled(move)`
-  width: 39px;
-  height: 39px;
-  padding: 10px;
-  &:hover {
-    & path {
-      fill: green;
-    }
-  }
-`;
-Action.Delete = styled(deleteI)`
+Action.Move = styled(deleteI)`
   width: 39px;
   height: 39px;
   padding: 10px;

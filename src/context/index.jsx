@@ -3,12 +3,14 @@ import AnalyticsProvider from './analytics';
 import EmailsProvider from './emails';
 import MediaProvider from './media';
 import MoliyaProvider from './moliya';
+import StudentsProvider from './students/index';
 
 const provider = [
   EmailsProvider,
   MoliyaProvider,
   AnalyticsProvider,
   MediaProvider,
+  StudentsProvider,
 ];
 
 const ContextProvider = ({ children }) => {

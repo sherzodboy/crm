@@ -1,34 +1,52 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import BreadCrumb from '../../Generics/BreadCrumb';
 import GenericTable from '../../Generics/Table';
 import { Action, Container } from './style';
 import GenericButton from '../../Generics/Button';
 import GenericSelect from '../../Generics/Select';
 import AllLidsModal from './modal';
+import { StudentsContext } from '../../../context/students';
+import useFetch from '../../../hooks/useFetch';
 
 const AllLids = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setModal] = useState(false);
   const [modalProps, setModalProps] = useState({});
+  const [state, dispatch] = useContext(StudentsContext);
+
+  const request = useFetch();
+
+  const getStudent = async () => {
+    let res = await request('/tabs/students');
+    dispatch({ type: 'get', payload: res });
+  };
+
+  // fetch
+  useEffect(() => {
+    getStudent();
+  }, []);
 
   const onEdit = (e, res) => {
     e.stopPropagation();
     setModal(!openModal);
     setModalProps(res);
   };
-  const onMove = (e) => {
+  
+  const onMove = (e, value) => {
     e.stopPropagation();
+    request(`/tabs/students/id/*${value?.id}*`, { method: 'DELETE' }).then(
+      () => {
+        getStudent();
+      }
+    );
   };
-  const onDelete = (e) => {
-    e.stopPropagation();
-  };
-
   const headCells = [
     { id: 'name', label: "O'quvchining ismi" },
-    { id: 'group', label: 'Guruh' },
-    { id: 'date', label: 'Dars kuni va vaqti' },
-    { id: 'addedDate', label: "Qo'shilgan sana" },
+    { id: 'field', label: 'Guruh' },
+    { id: 'days', label: 'Dars kuni va vaqti' },
+    { id: 'added_date', label: "Qo'shilgan sana" },
     { id: 'admin', label: 'Moderator' },
     {
       id: 'action',
@@ -36,73 +54,9 @@ const AllLids = () => {
       render: (res) => (
         <Action>
           <Action.Edit onClick={(e) => onEdit(e, res)} />
-          <Action.Move onClick={onMove} />
-          <Action.Delete onClick={onDelete} />
+          <Action.Move onClick={(e) => onMove(e, res)} />
         </Action>
       ),
-    },
-  ];
-
-  let rows = [
-    {
-      id: 1,
-      name: 'Ravshan',
-      group: 'Frontend',
-      date: '08:00',
-      days: 'toq kunlari',
-      addedDate: '10.07.2024',
-      admin: 'Billion Admin',
-      level: 'Senior',
-    },
-    {
-      id: 2,
-      name: 'Asliddin',
-      group: 'Frontend',
-      days: 'toq kunlari',
-      date: '08:00',
-      addedDate: '10.07.2024',
-      admin: 'Billion Admin',
-      level: 'Middle',
-    },
-    {
-      id: 3,
-      name: 'Alibek',
-      group: 'Frontend',
-      date: '08:00',
-      days: 'toq kunlari',
-      addedDate: '10.07.2024',
-      admin: 'Billion Admin',
-      level: 'Beginner',
-    },
-    {
-      id: 4,
-      name: 'Iroda',
-      group: 'Frontend',
-      date: '08:00',
-      days: 'toq kunlari',
-      addedDate: '10.07.2024',
-      admin: 'Billion Admin',
-      level: 'Junior',
-    },
-    {
-      id: 5,
-      name: 'Baharoy',
-      group: 'Frontend',
-      date: '08:00',
-      days: 'toq kunlari',
-      addedDate: '10.07.2024',
-      admin: 'Billion Admin',
-      level: 'Advanced',
-    },
-    {
-      id: 6,
-      name: 'Marjona',
-      group: 'Frontend',
-      date: '08:00',
-      days: 'toq kunlari',
-      addedDate: '10.07.2024',
-      admin: 'Billion Admin',
-      level: 'Junior',
     },
   ];
 
@@ -136,7 +90,7 @@ const AllLids = () => {
           Buyurtma qo'shish
         </GenericButton>
       </BreadCrumb>
-      <GenericTable open={open} headCells={headCells} rows={rows}>
+      <GenericTable open={open} headCells={headCells} rows={state}>
         <GenericSelect data={data1} />
         <GenericSelect data={data1} />
         <GenericSelect data={data1} />
